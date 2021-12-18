@@ -18,8 +18,8 @@ void execute_bf() {
     char c = fgetc(file);
     while (c != EOF) {
         switch (c) {
-            case '>': ptr++; break;
-            case '<': ptr--; break;
+            case '>': ptr = ptr == DATA_SIZE - 1 ? 0 : ++ptr; break;
+            case '<': ptr = ptr == 0 ? DATA_SIZE - 1 : --ptr; break;
             case '+': arr[ptr]++; break;
             case '-': arr[ptr]--; break;
             case '.': putchar((int) arr[ptr]); break;
@@ -47,10 +47,11 @@ int main (int argc, char* argv[]) {
     }
     file = fopen(argv[1], "r");
     if (!file) {
-        printf("Error: Cannot open file. Make sure it exists!");
+        printf("Error: Cannot open file. Make sure it exists!\n");
         return 1;
     }
 
     execute_bf();
+    fclose(file);
     return 0;
 }
