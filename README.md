@@ -1,5 +1,5 @@
 # Brainfuck interpreter
-Takes a file and runs [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) code. Interpreter written in C.
+Runs [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) code from a file. Has basic error checking. Written in C.
 
 ## Usage
 Compile using `gcc` or any C compiler. Then run with file path as parameter
